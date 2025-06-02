@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --bg-color: #f0f4f8;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(to right, #4a90e2, #007bff);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        .container {
+            padding: 1.5rem;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 0.5rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--card-bg);
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .project-card ul {
+            margin-left: 1.2rem;
+            list-style: disc;
+        }
+
+        .resume-download {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .resume-download p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .resume-download a {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-download a:hover {
+            background-color: #006ae1;
+        }
+
+        .resume {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            padding-block: 0.5rem;
+            padding-inline: 1.25rem;
+            background-color: rgb(0 107 179);
+            border-radius: 9999px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ffff;
+            gap: 10px;
+            font-weight: bold;
+            border: 3px solid #ffffff4d;
+            outline: none;
+            overflow: hidden;
+            font-size: 15px;
+            }
+
+            .icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .resume:hover {
+            transform: scale(1.05);
+            border-color: #fff9;
+            }
+
+            .resume:hover .icon {
+            transform: translate(4px);
+            }
+
+            .resume:hover::before {
+            animation: shine 1.5s ease-out infinite;
+            }
+
+            .resume::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            background-image: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.8),
+                rgba(255, 255, 255, 0) 70%
+            );
+            top: 0;
+            left: -100px;
+            opacity: 0.6;
+            }
+
+            @keyframes shine {
+            0% {
+                left: -100px;
+            }
+
+            60% {
+                left: 100%;
+            }
+
+            to {
+                left: 100%;
+            }
+            }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <h1>XXXXX</h1>
+        <p>ROLE</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>About Me</h2>
+            <div>
+                I'm XXXX, a passionate and driven <span style="color: #007bff;">Python Software Developer</span> with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape. With a growth mindset and a commitment to clean, maintainable code, I'm excited to contribute to impactful projects and tackle new challenges in the world of  <span style="color: #007bff;">software development</span>.
+            </div>
+        </div>  
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill"><img src="/images/python.jpeg" alt="Python"> Python</div>
+                <div class="skill"><img src="/images/django2.jpeg" alt="django">Django</div>
+                <div class="skill"><img src="/images/fastapiog.jpeg" alt="fastapi">Fast API</div>
+                <div class="skill"><img src="/images/sql.jpeg" alt="SQL"> SQL</div>
+                <div class="skill"><img src="/images/ai.jpeg" alt="AI">AI / ML</div>
+                <div class="skill"><img src="/images/html.jpeg" alt="HTML"> HTML</div>
+                <div class="skill"><img src="/images/css.jpeg" alt="CSS"> CSS</div>
+                <div class="skill"><img src="/images/js.jpeg" alt="js">JavaScript</div>
+                <div class="skill"><img src="/images/aws.png" alt="AWS"> AWS</div>
+                <div class="skill"><img src="/images/cloud.jpeg" alt="cloud"> Cloud computing</div>
+                <div class="skill"><img src="/images/git.jpeg" alt="Git"> Git</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Task Management and Time Tracking Web Application</h3>
+                <ul>
+                    <li><strong>Role:</strong> Full Stack Developer</li>
+                    <li><strong>Responsibilities:</strong> Designed and developed both front-end and back-end functionalities, ensuring seamless user and admin workflows.</li>
+                    <li><strong>Technologies:</strong> Python, Django, SQLite, HTML, CSS, JavaScript, jQuery</li>
+                    <li><strong>Description:</strong> Developed a web app with role-specific dashboards. Admins can manage users and tasks; users log activities such as breaks, meetings, and work. Tracks real-time status and task duration to improve productivity.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Invoice Data Extraction System Using Gemini AI</h3>
+                <ul>
+                    <li><strong>Role:</strong> Python Developer</li>
+                    <li><strong>Responsibilities:</strong> Developed a solution to extract key invoice data from links in Excel/CSV files. Integrated Gemini AI and Google Generative AI models for data extraction and used Pandas for backend data processing.</li>
+                    <li><strong>Technologies:</strong> Python, Google Generative AI, HTML, CSS, JavaScript, FastAPI</li>
+                    <li><strong>Description:</strong> Designed a web-based application that allows users to upload Excel or CSV files containing links to various invoice formats (JPEG, JPG, PDF). Using Gemini AI and Google Generative AI models, the system extracts essential invoice data such as company details, invoice numbers, and financial information. The solution ensures accurate and efficient data extraction, streamlining the invoice processing workflow.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resume-download">
+            <p>Below is my latest resume available</p>
+            <a class="resume" href="pdf/Nawin_Resume_Feb_20.docx (1).pdf" download target="_blank" rel="noopener">Download Resume (PDF)</a>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <p><strong>Email:</strong> nawinasokan16@gmail.com</p>
+                <p><strong>Phone:</strong> +91-8300796919</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nawin-a-dev/">linkedin.com/in/nawin-a-dev</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/nawinasokan">github.com/nawinasokan</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nawin. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
