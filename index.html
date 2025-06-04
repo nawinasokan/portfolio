@@ -221,6 +221,37 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background: linear-gradient(-135deg, var(--primary-color), #4f5bfe);
+            color: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
     </style>
 </head>
 <body>
@@ -233,26 +264,36 @@
         <div class="section">
             <h2>About Me</h2>
             <div>
-                I'm Nawin Asokan, a passionate and driven <span style="color: #007bff;">Python Software Developer</span> with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape. With a growth mindset and a commitment to clean, maintainable code, I'm excited to contribute to impactful projects and tackle new challenges in the world of  <span style="color: #007bff;">software development</span>.
+                I'm Nawin Asokan, a passionate and driven Python Software Developer with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape. With a growth mindset and a commitment to clean, maintainable code, I'm excited to contribute to impactful projects and tackle new challenges in the world of software development.
             </div>
         </div>  
 
         <div class="section">
             <h2>Skills</h2>
             <div class="skills">
-                <div class="skill"><img src="/images/python.jpeg" alt="Python"> Python</div>
-                <div class="skill"><img src="/images/dj.jpeg" alt="django">Django</div>
-                <div class="skill"><img src="/images/fastapiog.jpeg" alt="fastapi">Fast API</div>
-                <div class="skill"><img src="/images/sql.jpeg" alt="SQL"> SQL</div>
-                <div class="skill"><img src="/images/ai.jpeg" alt="AI">AI / ML</div>
-                <div class="skill"><img src="/images/html.jpeg" alt="HTML"> HTML</div>
-                <div class="skill"><img src="/images/css.jpeg" alt="CSS"> CSS</div>
-                <div class="skill"><img src="/images/js.jpeg" alt="js">JavaScript</div>
-                <div class="skill"><img src="/images/aws.png" alt="AWS"> AWS</div>
-                <div class="skill"><img src="/images/cloud.jpeg" alt="cloud"> Cloud computing</div>
-                <div class="skill"><img src="/images/git.jpeg" alt="Git"> Git</div>
+                <div class="skill"  data-skill="python"><img src="/images/python.jpeg" alt="Python">Python</div>
+                <div class="skill"  data-skill="django"><img src="/images/dj.jpeg" alt="django">Django</div>
+                <div class="skill"  data-skill="fastapi"><img src="/images/fastapiog.jpeg" alt="fastapi">Fast API</div>
+                <div class="skill"  data-skill="sql"><img src="/images/sql.jpeg" alt="SQL">SQL</div>
+                <div class="skill"  data-skill="ai"><img src="/images/ai.jpeg" alt="AI">AI / ML</div>
+                <div class="skill"  data-skill="html"><img src="/images/html.jpeg" alt="HTML">HTML</div>
+                <div class="skill"  data-skill="css"><img src="/images/css.jpeg" alt="CSS">CSS</div>
+                <div class="skill"  data-skill="js"><img src="/images/js.jpeg" alt="js">JavaScript</div>
+                <div class="skill"  data-skill="aws"><img src="/images/aws.png" alt="AWS">AWS</div>
+                <div class="skill"  data-skill="cloud"><img src="/images/cloud.jpeg" alt="cloud">Cloud computing</div>
+                <div class="skill"  data-skill="git"><img src="/images/git.jpeg" alt="Git">Git</div>
             </div>
         </div>
+
+        <div id="skillModal" class="modal d-none">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2 id="modalTitle"></h2>
+              <p id="modalDescription"></p>
+            </div>
+        </div>
+
+          
 
         <div class="section">
             <h2>Projects</h2>
@@ -285,8 +326,8 @@
         <div class="section">
             <h2>Contact</h2>
             <div class="contact-grid">
-                <p><strong>Email:</strong> nawinasokan16@gmail.com</p>
-                <p><strong>Phone:</strong> +91-8300796919</p>
+                <p><strong>Email:</strong> <a href="mailto:nawinasokan16@gmail.com">nawinasokan16@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+918300796919">+91-8300796919</a></p>
                 <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nawin-a-dev/">linkedin.com/in/nawin-a-dev</a></p>
                 <p><strong>GitHub:</strong> <a href="https://github.com/nawinasokan">github.com/nawinasokan</a></p>
             </div>
@@ -296,6 +337,51 @@
     <footer>
         <p>&copy; 2025 Nawin. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        const modal = document.getElementById("skillModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const closeBtn = document.querySelector(".close");
+        
+        const skillDescriptions = {
+            python: "Python is a versatile language used in web development, automation, data science, and more. I used Python to build backend logic and automate repetitive tasks in my projects.",
+            
+            django: "Django is a high-level Python web framework that promotes rapid development. I used Django to build secure, scalable web applications with an admin interface out of the box.",
+            
+            fastapi: "FastAPI is a modern Python web framework for building APIs quickly with automatic docs. I used FastAPI to create high-performance REST APIs with JWT authentication.",
+            
+            sql: "SQL is used to manage and query relational databases efficiently. I used SQL for writing complex queries and managing data in PostgreSQL and SQLite.",
+            
+            ai: "AI/ML involve creating intelligent systems that learn and improve from data. I implemented basic ML models to analyze trends and automate decision-making in project workflows.",
+            
+            html: "HTML is the standard language for creating webpages. I used HTML to structure all web pages in my frontend development.",
+            
+            css: "CSS styles the look and layout of web pages. I used CSS to make responsive and clean UI layouts for dashboards and forms.",
+            
+            js: "JavaScript adds interactivity to web pages. I used JavaScript to handle client-side validation, animations, and dynamic page content.",
+            
+            aws: "AWS is a cloud platform offering scalable compute, storage, and other services. I deployed web apps on AWS EC2 and used S3 for storing uploaded files.",
+            
+            cloud: "Cloud computing enables on-demand access to computing resources over the internet. I used cloud services for scalable hosting, storage, and performance monitoring.",
+            
+            git: "Git is a version control system that tracks code changes and supports collaboration. I used Git and GitHub to manage my project versions and collaborate with team members."
+        };
+
+        
+        document.querySelectorAll('.skill').forEach(skill => {
+          skill.addEventListener('click', () => {
+            const skillKey = skill.getAttribute('data-skill');
+            modalTitle.textContent = skill.textContent.trim();
+            modalDescription.textContent = skillDescriptions[skillKey] || "Description not available.";
+            modal.style.display = "block";
+          });
+        });
+        
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+        </script>
+        
 
 </body>
 </html>
