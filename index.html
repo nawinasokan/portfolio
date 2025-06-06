@@ -7,47 +7,112 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/index.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
 </head>
 <body>
-    <header id="main-header">
-        <!-- <h1>Nawin Asokan</h1> -->
-        <h2 style="text-align: center; margin: 0 auto;">Software Developer</h2>
-    </header>
 
-    <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <div>
-                I'm Nawin Asokan, a passionate and driven Python Software Developer with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape. With a growth mindset and a commitment to clean, maintainable code, I'm excited to contribute to impactful projects and tackle new challenges in the world of software development.
+    <nav class="sticky top-0 z-50 bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="images/nobglogo.png" class="h-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NAWIN ASOKAN</span>
+        </a>
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <img class="w-8 h-8 rounded-full" src="images/nobguser.png" alt="user photo">
+            </button>
+            <!-- Dropdown menu -->
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                <div class="px-4 py-3">
+                    <span class="block text-sm text-gray-900 dark:text-white">Nawin Asokan</span>
+                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">SDE</span>
+                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"></span>
+
+                </div>
+                
+                </div>
+                <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
             </div>
-        </div>  
-
-        <div class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill"  data-skill="python"><img src="/images/python.jpeg" alt="Python">Python</div>
-                <div class="skill"  data-skill="django"><img src="/images/dj.jpeg" alt="django">Django</div>
-                <div class="skill"  data-skill="fastapi"><img src="/images/fastapiog.jpeg" alt="fastapi">Fast API</div>
-                <div class="skill"  data-skill="sql"><img src="/images/sql.jpeg" alt="SQL">SQL</div>
-                <div class="skill"  data-skill="ai"><img src="/images/ai.jpeg" alt="AI">AI / ML</div>
-                <div class="skill"  data-skill="html"><img src="/images/html.jpeg" alt="HTML">HTML</div>
-                <div class="skill"  data-skill="css"><img src="/images/css.jpeg" alt="CSS">CSS</div>
-                <div class="skill"  data-skill="js"><img src="/images/js.jpeg" alt="js">JavaScript</div>
-                <div class="skill"  data-skill="aws"><img src="/images/aws.png" alt="AWS">AWS</div>
-                <div class="skill"  data-skill="cloud"><img src="/images/cloud.jpeg" alt="cloud">Cloud computing</div>
-                <div class="skill"  data-skill="git"><img src="/images/git.jpeg" alt="Git">Git</div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Profile</a>
+                </li>
+                <li>
+                <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skills</a>
+                </li>
+                <li>
+                <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
+                </li>
+                <li>
+                <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Experience</a>
+                </li>
+                <li>
+                <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                </li>
+            </ul>
             </div>
         </div>
+    </nav>
+
+    <img src="images/aboutme.png" alt="">
+
+    <p class="mb-3 text-left rtl:text-right text-gray-500 dark:text-gray-400">I'm Nawin Asokan, a passionate and driven Python Software Developer with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape. With a growth mindset and a commitment to clean, maintainable code, I'm excited to contribute to impactful projects and tackle new challenges in the world of software development.</p>
+
+    
+
+    <div class="relative w-full py-40 px-10 bg-white dark:bg-gray-900 overflow-hidden"  style="padding: 10rem;">
+        <span class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 text-center mb-20 z-10 relative" style="padding-left: 35%;">SKILLS</span>
+
+        <img src="/images/pythonnobg.png" alt="Python" class="absolute w-12 animate-float" style="top: 15%; left: 19%;">
+        <img src="/images/djnobg.png" alt="Django" class="absolute w-12 animate-float-delay-1" style="top: 29%; left: 9%;">
+        <img src="/images/fastapinobg.png" alt="FastAPI" class="absolute w-12 animate-float-delay-2" style="top: 15%; right: 22%;">
+        <img src="/images/sqlnobg.png" alt="SQL" class="absolute w-12 animate-float-delay-3" style="bottom: 35%; left: 16%;">
+        <img src="/images/ainobg.png" alt="AI" class="absolute w-12 animate-float" style="top: 70%; right: 15%;">
+        <img src="/images/htmlnobg.png" alt="HTML" class="absolute w-12 animate-float-delay-1" style="bottom: 35%; right: 25%;">
+        <img src="/images/bs5nobg.png" alt="BOOTSTRAP" class="absolute w-12 animate-float-delay-1" style="bottom: 53%; right: 13%;">
+        <img src="/images/cssnobg.png" alt="CSS" class="absolute w-12 animate-float-delay-2" style="top: 15%; right: 50%;">
+        <img src="/images/jsnobg.png" alt="JavaScript" class="absolute w-12 animate-float-delay-3" style="bottom: 18%; left: 30%;">
+        <img src="/images/awsnobg.png" alt="AWS" class="absolute w-12 animate-float" style="top: 29%; left: 30%;">
+        <img src="/images/cloudnobg.png" alt="Cloud" class="absolute w-12 animate-float-delay-1" style="bottom: 15%; right: 40%;">
+        <img src="/images/gitnobg.png" alt="Git" class="absolute w-12 animate-float-delay-2" style="top: 30%; left: 60%;">
+    
+    </div>
+
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+    <h1 class="mt-4 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Coding Ideas</span> into Scalable Solutions.
+    </h1>
+    <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+        As a Python Developer, I build full stack applications with clean architecture to solve real-world problems and drive innovation.
+    </p>
+
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
 
-        <div id="skillModal" class="modal d-none">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2 id="modalTitle"></h2>
-              <p id="modalDescription"></p>
+    <figure class="max-w-screen-md mx-auto text-center">
+        <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+            <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+        </svg>
+        <blockquote>
+            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Small disciplines repeated with consistency every day lead to great achievements gained slowly over time"</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+            <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+                <cite class="pe-3 font-medium text-gray-900 dark:text-white">— John C. Maxwell</cite>
             </div>
-        </div>
+        </figcaption>
+    </figure>
+
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
 
         <div class="section">
