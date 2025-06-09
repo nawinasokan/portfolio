@@ -18,10 +18,10 @@ body{
 
     .animate-float-delay-2 {
     animation: float 6s ease-in-out infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
     }
 
     .animate-float-delay-3 {
     animation: float 6s ease-in-out infinite;
-    animation-delay: 3s;
+    animation-delay: 5s;
     }
