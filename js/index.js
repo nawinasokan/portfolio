@@ -72,4 +72,34 @@ document.getElementById("duration").textContent = durationText;
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("div[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function onScroll() {
+    let currentId = "";
+
+    sections.forEach((section) => {
+      const top = section.offsetTop - 200;
+      const height = section.offsetHeight;
+      if (window.scrollY >= top && window.scrollY < top + height) {
+        currentId = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href").substring(1);
+      if (href === currentId) {
+        // ACTIVE: set to blue
+        link.style.color = "var(--color-blue-500)";
+      } else {
+        // NOT ACTIVE: set to white
+        link.style.color = "var(--color-white)";
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+});
+
 // --------------------------------------------------------------------------------------------
