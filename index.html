@@ -9,7 +9,20 @@
     <script src="js/index.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <style>
+      .card--1 .card__img, .card--1 .card__img--hover {
+          background-image: url('images/blackalaram.png');
+      }
+      
+      .card--2 .card__img, .card--2 .card__img--hover {
+          background-image: url('images/blackinvoice.jpg');
+      }
 
+      .card--3 .card__img, .card--3 .card__img--hover {
+          background-image: url('images/blackfile.png');
+      }
+      
+    </style>
 </head>
 <body>
 
@@ -17,7 +30,6 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="images/nobglogo.png" class="h-8" alt="Flowbite Logo" />
-            <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NAWIN ASOKAN</span> -->
         </a>
         <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -29,7 +41,6 @@
                     <span class="block text-sm text-gray-900 dark:text-white">Nawin Asokan</span>
                     <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">SDE</span>
                     <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"></span>
-                    
                 </div>
                 
                 </div>
@@ -46,10 +57,12 @@
                 <a href="#profile" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" >About</a>
                 </li>
                 <li>
+                  <a href="#qualifications" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Qualifications</a>
+                </li> 
                 <a href="#skill" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skills</a>
                 </li>
                 <li>
-                <a href="#projects" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
+                  <a href="#projects" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
                 </li>
                 <li>
                 <a href="#experience" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Experience</a>
@@ -62,150 +75,188 @@
         </div>
     </nav>
     <!-- Hero Section -->
-    <div id="content" class="w-full h-screen relative bg-cover bg-center bg-no-repeat" 
-        style="background-image: url('images/aboutme.png');" >
-
-      <!-- Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-l from-transparent via-black/60 to-black/90 
-                  flex flex-col justify-center px-6 sm:px-12 text-white z-10" >
-
+    <div id="content" class="w-full h-screen relative bg-cover bg-center bg-no-repeat" style="background-image: url('images/aboutme.png');" >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-l from-transparent via-black/60 to-black/90 flex flex-col justify-center px-6 sm:px-12 text-white z-10" >
         <h2 class="text-3xl sm:text-4xl font-bold mb-2">Hello,</h2>
         <h3 class="text-2xl sm:text-3xl font-semibold mb-1">I'm Nawin Asokan</h3>
-        <!-- <p class="">Software Developer</p>       -->
         <div class="dropping-texts text-lg sm:text-xl mb-6">
           <div>Software Developer</div>
           <div>Full Stack Developer</div>
           <div>Python Developer</div>
-          <!-- <div>EVERYONE!</div> -->
         </div> 
-
       </div>
     </div>
 
-      <!-- Section Wrapper -->
-    <div class="bg-dark p-6 rounded-xl shadow-lg max-w-5xl mx-auto"  id="profile"> 
+    <div id="profile">
+      <div class="bg-dark p-6 rounded-xl shadow-lg max-w-5xl mx-auto"> 
 
-    <!-- Profile Heading Centered -->
-    <div class="w-full text-center mb-10">
-      <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-        About Me
-      </span>
-    </div>
-  
-    <!-- Flex Container for Image and Text -->
-    <div class="flex flex-col md:flex-row items-center justify-center">
-      
-      <!-- Image Section -->
-      <div class="md:w-1/3 flex justify-center mb-6 md:mb-0 md:mr-6">
-        <div class="rounded-xl overflow-hidden shadow-lg w-48 h-48">
-          <img src="images/rcbvirat.avif" alt="About Me" class="w-full h-full object-cover" />
-          <!-- <video autoplay muted loop>
-            <source src="images/acheive.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-           -->
+        <!-- About Heading Centered -->
+        <div class="w-full text-center mb-10">
+          <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">About Me</span>
         </div>
+    
+        <!-- Flex Container for Image and Text -->
+        <div class="flex flex-col md:flex-row items-center justify-center">
+        
+          <div class="md:w-1/3 flex justify-center mb-6 md:mb-0 md:mr-6">
+            <div class="rounded-xl overflow-hidden shadow-lg w-48 h-48">
+              <img src="images/rcbvirat.avif" alt="About Me" class="w-full h-full object-cover" />
+              <!-- <video autoplay muted loop>
+                <source src="images/acheive.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              -->
+            </div>
+          </div>
+    
+          <div class="md:w-2/3 text-left" style="margin-left: 3%;margin-top: 10px;">
+            <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed text-justify">
+              I'm Nawin Asokan, a passionate and driven Python Software Developer with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape.I'm excited to contribute to impactful projects and tackle new challenges in the world of software development.
+            </p>
+          </div>
+        </div>  
       </div>
-  
-      <div class="md:w-2/3 text-left" style="margin-left: 3%;margin-top: 10px;">
-        <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed text-justify">
-          I'm Nawin Asokan, a passionate and driven Python Software Developer with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape.I'm excited to contribute to impactful projects and tackle new challenges in the world of software development.
-        </p>
-      </div>
-
-    </div>
-  </div>
-  
-    <div class="w-full max-w-6xl mx-auto mt-10 border rounded-lg overflow-hidden shadow-md h-[600px]" id="skill">
-      <iframe src="skill.html" class="w-full h-full border-0" scrolling="no"></iframe>
     </div>
 
-    <div class="w-full text-center z-10 mt-5" id="experience">
+    <div id="qualifications" >
+      <div class="w-full text-center z-10 mt-5">
         <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 mb-10">
           Qualifications
         </span>
-      
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4 max-w-6xl mx-auto">
-          <!-- Card 1 -->
           <div class="bg-gray-900 text-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
-            <!-- Card Heading -->
             <h3 class="text-xl font-bold text-gray-900 text-white mb-4">Graduation</h3>
-          
-            <!-- Degree -->
             <p class="text-white dark:text-gray-200 text-base mb-2">Bachelor of Engineering</p>
-          
-            <!-- Department with Hover -->
             <p class="text-white dark:text-gray-200 text-base mb-2">
               <span class="cursor-help" >Electronics and Communication Engineering</span>
             </p>
-          
-            <!-- CGPA -->
             <p class="text-white dark:text-gray-200 text-base mb-2">
               <strong>Scored CGPA: </strong> 8.46
             </p>
-          
-            <!-- College Name with Hover -->
             <p class="text-white dark:text-gray-200 text-base">
-                <a 
-                  href="https://www.sonatech.ac.in" 
-                  target="_blank" 
-                  class="inline-flex items-center gap-1 text-sky-600 dark:text-sky-400 font-medium hover:underline hover:text-sky-700 dark:hover:text-sky-300 transition duration-200"
-                  >
+              <a href="https://www.sonatech.ac.in" target="_blank" class="inline-flex items-center gap-1 text-sky-600 dark:text-sky-400 font-medium hover:underline hover:text-sky-700 dark:hover:text-sky-300 transition duration-200" >
                   Sona College of Technology, Salem
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
                     <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                   </svg>
-                </a>
-              </p>
-              
+              </a>
+            </p>
           </div>
-          
-      
+
           <!-- Card 2 -->
           <div class="bg-gray-900 text-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
-            <!-- Card Heading -->
             <h3 class="text-xl font-bold text-gray-900 text-white mb-4">HSC</h3>
-          
-            <!-- Degree -->
             <p class="text-white dark:text-gray-200 text-base mb-2">Maths Computer Science</p>
-          
-            <!-- CGPA -->
             <p class="text-white dark:text-gray-200 text-base mb-2">
               <strong>Scored Percentage: </strong> 61.6%
             </p>
-          
-            <!-- College Name with Hover -->
             <p class="text-white dark:text-gray-200 text-base">
-                  The Gugai Higher Secondary School, Salem
-              </p>
-              
+              The Gugai Higher Secondary School, Salem
+            </p>
           </div>
       
           <!-- Card 3 -->
           <div class="bg-gray-900 text-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
-            <!-- Card Heading -->
             <h3 class="text-xl font-bold text-gray-900 text-white mb-4">SSLC</h3>
-          
-            <!-- Degree -->
             <p class="text-white dark:text-gray-200 text-base mb-2">Maths Computer Science</p>
-          
-            <!-- CGPA -->
             <p class="text-white dark:text-gray-200 text-base mb-2">
               <strong>Scored Percentage: </strong> 71.4%
             </p>
-          
-            <!-- College Name with Hover -->
             <p class="text-white dark:text-gray-200 text-base">
-                  The Gugai Higher Secondary School, Salem
-              </p>
+              The Gugai Higher Secondary School, Salem
+            </p>
           </div>
+          
         </div>
+      </div>
     </div>
+    
+    <div id="skill">
+      <div class="w-full max-w-6xl mx-auto mt-10 border rounded-lg overflow-hidden shadow-md h-[600px]">
+        <iframe src="skill.html" class="w-full h-full border-0" scrolling="no"></iframe>
+      </div>
+    </div>  
 
-    <div class="w-full max-w-6xl mx-auto mt-10 border rounded-lg overflow-hidden shadow-md h-[600px]" id="projects">
+    
+
+    <div  id="projects" style="margin-top: 3%;">
+      <div class="justify-center text-center" >
+        <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 mb-20 z-10">
+            Projects
+        </span>
+      </div>
+      <section class="cards">
+          <article class="card card--1" onmouseover="showDescription(1)" onmouseout="hideDescription()" >
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+              <div class="card__img--hover"></div>
+            </a>
+            <div class="card__info">
+              <span class="card__category"> PROJECT 1</span>
+              <h3 class="card__title">Task Management and Time Tracking Web Application</h3>
+              <span class="card__by">At <a href="#" class="card__author" title="author">2024</a></span>
+            </div>
+          </article>
+            
+            
+          <article class="card card--2" onmouseover="showDescription(2)" onmouseout="hideDescription()" >
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+              <div class="card__img--hover"></div>
+            </a>
+            <div class="card__info">
+              <span class="card__category"> PROJECT 2</span>
+              <h3 class="card__title">Invoice Data Extraction System Using Gemini AI</h3>
+              <span class="card__by">At <a href="#" class="card__author" title="author">2025</a></span>
+            </div>
+          </article>  
+  
+          <article class="card card--3" onmouseover="showDescription(3)" onmouseout="hideDescription()" >
+              <div class="card__img"></div>
+              <a href="#" class="card_link">
+                <div class="card__img--hover"></div>
+              </a>
+              <div class="card__info">
+                  <span class="card__category"> PROJECT 3</span>
+                  <h3 class="card__title">Bulk File uploadation</h3>
+                <span class="card__by">At <a href="#" class="card__author" title="author">2025</a></span>
+              </div>
+            </article>
+      
+          </section>
+  
+          <div style="margin-top: 2;margin-left: 13%;" id="card-description" class="relative mt-2 mx-auto max-w-6xl hidden group space-y-4 text-white transition-opacity duration-500 ease-in-out">
+            <h4 style="color: #6ee7b7;" class="text-2xl font-bold mb-2">Project Overview</h4>
+            <div class="space-y-3 text-base leading-relaxed">
+              <p id="desc-1" class="hidden">
+                  <span style="color: #6ee7b7;">Description :</span> Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.
+              </p>
+              <p id="tech-1" style="color: #6ee7b7;" class="hidden text-sm font-medium">
+                  Tech stack : Python, Django framework, SQLite, HTML, CSS, JavaScript, jQuery.
+              </p>
+              <p id="desc-2" class="hidden">
+                  <span style="color: #6ee7b7;">Description :</span> Built a system that leverages Gemini AI to extract invoice data from PDF and image files with high accuracy using OCR and machine learning.
+              </p>
+              <p id="tech-2" style="color: #6ee7b7;" class="hidden text-sm font-medium">
+                  Tech stack : Python, Gemini API, HTML, CSS, JavaScript, Django, PostgreSQL.
+              </p>
+              <p id="desc-3" class="hidden">
+                  <span style="color: #6ee7b7;">Description :</span> Developed a bulk file uploader for handling large datasets, validating formats, and recording metadata for real-time processing and audit trails.
+              </p>
+              <p id="tech-3" style="color: #6ee7b7;" class="hidden text-sm font-medium">
+                  Tech stack : Python, Django, HTML, CSS, PostgreSQL, JavaScript.
+              </p>
+            </div>
+          </div>
+      </div>
+    
+
+    <!-- <div class="w-full max-w-6xl mx-auto mt-10 border rounded-lg overflow-hidden shadow-md h-[600px]" id="projects">
       <iframe src="projects.html" class="w-full h-full border-0" scrolling="no"></iframe>
-    </div>
+    </div> -->
 
     <!-- <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"> -->
 
@@ -213,87 +264,48 @@
       <iframe src="quote.html" class="w-full h-full border-0"></iframe>
     </div>
 
-
-
+    
     <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl" style="margin-top: 3%;">
       <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Coding Ideas</span> into Scalable Solutions.
     </h1>
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
         As a Python Developer, I build full stack applications with clean architecture to solve real-world problems and drive innovation.
     </p>
-
-    <!-- <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"> -->
-    <!-- Animated Gradient Quote Card -->
-    <!-- <div class="w-full max-w-3xl mx-auto h-96 rounded-2xl overflow-hidden shadow-lg relative bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 animate-gradient-x text-white flex flex-col justify-center items-center px-4 text-center">
-
-      <svg class="w-10 h-10 mb-3 text-gray-200" fill="currentColor" viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-      </svg>
-
-      <p class="text-2xl italic font-medium mb-4 max-w-xl">
-        "Small disciplines repeated with consistency every day lead to great achievements gained slowly over time"
-      </p>
-      <cite class="block font-semibold">— John C. Maxwell</cite>
-    </div> -->
-
-
         
-      
-      <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-
-      
-      <div class="section bg-dark text-white">
-          <h2>Experience</h2>
-          <div>
-              <li>Company : <a href="https://mahimatech.com/" target="_blank">Mahima Tech</a></li>
-              <li id="duration">Work Experience : </li>
-              <li>Current Role : Software Developer</li>
-          </div>
-      </div> 
-      
-
-      <div class="section bg-dark text-white" id="contact">
-          <h2>Certifications and Achievements</h2>
-          <div>
-              <li>Certified in Programming in PYTHON, Cloud computing from Livewire india.</li>
-              <li>Certified in Programming in JAVA from NPTEL.</li>
-          </div>
-      </div> 
-        
-
-      <div class="section bg-dark text-white">
-          <h2>Projects</h2>
-          <h3>Task Management and Time Tracking Web Application</h3>
-          <ul>
-              <li><strong>Role :</strong> Full Stack Developer</li>
-              <li><strong>Responsibilities :</strong> Designed and developed both front-end and back-end functionalities, ensuring seamless user and admin workflows.</li>
-              <li><strong>Technologies :</strong> Python, Django, SQLite, HTML, CSS, JavaScript, jQuery</li>
-              <li><strong>Description :</strong> Developed a web app with role-specific dashboards. Admins can manage users and tasks; users log activities such as breaks, meetings, and work. Tracks real-time status and task duration to improve productivity.</li>
-          </ul>
-
-          <h3>Invoice Data Extraction System Using Gemini AI</h3>
-          <ul>
-              <li><strong>Role :</strong> Python Developer</li>
-              <li><strong>Responsibilities :</strong> Developed a solution to extract key invoice data from links in Excel/CSV files. Integrated Gemini AI and Google Generative AI models for data extraction and used Pandas for backend data processing.</li>
-              <li><strong>Technologies :</strong> Python, Google Generative AI, HTML, CSS, JavaScript, FastAPI</li>
-              <li><strong>Description :</strong> Designed a web-based application that allows users to upload Excel or CSV files containing links to various invoice formats (JPEG, JPG, PDF). Using Gemini AI and Google Generative AI models, the system extracts essential invoice data such as company details, invoice numbers, and financial information. The solution ensures accurate and efficient data extraction, streamlining the invoice processing workflow.</li>
-          </ul>
-      </div>
+    <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
 
 
-      <div class="section bg-dark text-white" >
-          <h2>Contact</h2>
-          <div class="contact-grid">
-              <p><strong>Email :</strong> <a href="mailto:nawinasokan16@gmail.com" target="_blank" >nawinasokan16@gmail.com</a></p>
-              <p><strong>Phone :</strong> <a href="tel:+918300796919" target="_blank">+91-8300796919</a></p>
-              <p><strong>LinkedIn :</strong> <a href="https://linkedin.com/in/nawin-a-dev/" target="_blank">linkedin.com/in/nawin-a-dev</a></p>
-              <p><strong>GitHub :</strong> <a href="https://github.com/nawinasokan" target="_blank">github.com/nawinasokan</a></p>
-          </div>
-      </div>
+    <div class="section bg-dark text-white">
+        <h2>Experience</h2>
+        <div>
+            <li>Company : <a href="https://mahimatech.com/" target="_blank">Mahima Tech</a></li>
+            <li id="duration">Work Experience : </li>
+            <li>Current Role : Software Developer</li>
+        </div>
+    </div> 
+    
 
-      <div class="resume-download bg-dark text-white">
-          <a class="resume" href="pdf/Nawin_Resume.pdf" download target="_blank" rel="noopener">Download Resume (PDF)</a>
-      </div>
+    <div class="section bg-dark text-white" id="contact">
+        <h2>Certifications and Achievements</h2>
+        <div>
+            <li>Certified in Programming in PYTHON, Cloud computing from Livewire india.</li>
+            <li>Certified in Programming in JAVA from NPTEL.</li>
+        </div>
+    </div> 
+    
+
+    <div class="section bg-dark text-white" >
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <p><strong>Email :</strong> <a href="mailto:nawinasokan16@gmail.com" target="_blank" >nawinasokan16@gmail.com</a></p>
+            <p><strong>Phone :</strong> <a href="tel:+918300796919" target="_blank">+91-8300796919</a></p>
+            <p><strong>LinkedIn :</strong> <a href="https://linkedin.com/in/nawin-a-dev/" target="_blank">linkedin.com/in/nawin-a-dev</a></p>
+            <p><strong>GitHub :</strong> <a href="https://github.com/nawinasokan" target="_blank">github.com/nawinasokan</a></p>
+        </div>
+    </div>
+
+    <div class="resume-download bg-dark text-white">
+        <a class="resume" href="pdf/Nawin_Resume.pdf" download target="_blank" rel="noopener">Download Resume (PDF)</a>
     </div>
 
     <!-- <footer>

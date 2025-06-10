@@ -101,3 +101,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", onScroll);
 });
+
+
+
+// for project section description
+function showDescription(cardNum) {
+  document.getElementById("card-description").classList.remove("hidden");
+
+  for (let i = 1; i <= 3; i++) {
+  document.getElementById("desc-" + i).classList.add("hidden");
+  document.getElementById("tech-" + i).classList.add("hidden");
+  }
+
+  document.getElementById("desc-" + cardNum).classList.remove("hidden");
+  document.getElementById("tech-" + cardNum).classList.remove("hidden");
+}
+
+function hideDescription() {
+  document.getElementById("card-description").classList.add("hidden");
+}
