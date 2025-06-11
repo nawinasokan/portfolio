@@ -477,7 +477,7 @@ body{
       }
   
       .timeline-content a {
-        color: #e79f64;
+        color: var(--color-blue-500);;
         text-decoration: none;
       }
   
