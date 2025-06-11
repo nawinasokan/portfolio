@@ -105,18 +105,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // for project section description
+function isMobile() {
+  return window.innerWidth <= 768; // adjust if needed
+}
+
 function showDescription(cardNum) {
-  document.getElementById("card-description").classList.remove("hidden");
+  if (isMobile()) {
+    // Mobile behavior: Show below the specific card
+    hideAllMobileDescriptions();
 
-  for (let i = 1; i <= 3; i++) {
-  document.getElementById("desc-" + i).classList.add("hidden");
-  document.getElementById("tech-" + i).classList.add("hidden");
+    const card = document.querySelector(".card--" + cardNum);
+    const mobileDesc = document.createElement("div");
+    mobileDesc.classList = "m-4 p-4 text-sm rounded-lg mt-2 text-white space-y-2";
+    mobileDesc.dataset.mobileDesc = "true";
+
+    const desc = document.getElementById("desc-" + cardNum).textContent.replace("Description :", "").trim();
+    const tech = document.getElementById("tech-" + cardNum).textContent.trim();
+
+    mobileDesc.innerHTML = `
+      <p><span style="color:#6ee7b7;">Description :</span> ${desc}</p>
+      <p style="color:#6ee7b7;">${tech}</p>
+    `;
+
+    card.insertAdjacentElement("afterend", mobileDesc);
+  } else {
+    // Desktop behavior: Show fixed section at bottom
+    document.getElementById("card-description").classList.remove("hidden");
+
+    for (let i = 1; i <= 3; i++) {
+      document.getElementById("desc-" + i).classList.add("hidden");
+      document.getElementById("tech-" + i).classList.add("hidden");
+    }
+
+    document.getElementById("desc-" + cardNum).classList.remove("hidden");
+    document.getElementById("tech-" + cardNum).classList.remove("hidden");
   }
-
-  document.getElementById("desc-" + cardNum).classList.remove("hidden");
-  document.getElementById("tech-" + cardNum).classList.remove("hidden");
 }
 
 function hideDescription() {
-  document.getElementById("card-description").classList.add("hidden");
+  if (isMobile()) {
+    hideAllMobileDescriptions();
+  } else {
+    document.getElementById("card-description").classList.add("hidden");
+  }
 }
+
+function hideAllMobileDescriptions() {
+  document.querySelectorAll("[data-mobile-desc='true']").forEach(el => el.remove());
+}
+
+// Optional: Clear mobile descriptions if screen is resized
+window.addEventListener("resize", () => {
+  hideAllMobileDescriptions();
+  hideDescription();
+});

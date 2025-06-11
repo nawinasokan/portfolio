@@ -5,30 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills Section</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
-          animation: {
-            'float': 'float 3s ease-in-out infinite',
-            'float-delay-1': 'float 3s ease-in-out infinite 0.5s',
-            'float-delay-2': 'float 3s ease-in-out infinite 1s',
-            'float-delay-3': 'float 3s ease-in-out infinite 1.5s',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' },
-            },
-          },
-        },
-      },
-    }
-  </script>
-  
+
 </head>
 <body>
   <canvas id="beamCanvas" class="fixed top-0 left-0 w-full h-full z-[-1]"></canvas>
@@ -54,56 +31,79 @@
 
 <script>
 
-
-  const canvas = document.getElementById("beamCanvas");
-  const ctx = canvas.getContext("2d");
-  
-  let w, h;
-  let particles = [];
-  
-  function initCanvas() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-    particles = [];
-  
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        radius: Math.random() * 1.5 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.7,
-        speedY: (Math.random() - 0.5) * 0.7,
-      });
+    // the movement of icons
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'float-delay-1': 'float 3s ease-in-out infinite 0.5s',
+            'float-delay-2': 'float 3s ease-in-out infinite 1s',
+            'float-delay-3': 'float 3s ease-in-out infinite 1.5s',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
     }
-  }
-  
-  function animate() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
-    ctx.fillRect(0, 0, w, h);
-  
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "#ffffff";
-      ctx.fill();
-  
-      p.x += p.speedX;
-      p.y += p.speedY;
-  
-      // Wrap around screen
-      if (p.x < 0) p.x = w;
-      if (p.x > w) p.x = 0;
-      if (p.y < 0) p.y = h;
-      if (p.y > h) p.y = 0;
-    });
-  
-    requestAnimationFrame(animate);
-  }
-  
-  window.addEventListener("resize", initCanvas);
-  initCanvas();
-  animate();
-  
+
+    //  the galaxy star effect
+    const canvas = document.getElementById("beamCanvas");
+    const ctx = canvas.getContext("2d");
+    
+    let w, h;
+    let particles = [];
+    
+    function initCanvas() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      particles = [];
+    
+      for (let i = 0; i < 100; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          radius: Math.random() * 1.5 + 0.5,
+          speedX: (Math.random() - 0.5) * 0.7,
+          speedY: (Math.random() - 0.5) * 0.7,
+        });
+      }
+    }
+    
+    function animate() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+      ctx.fillRect(0, 0, w, h);
+    
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+    
+        p.x += p.speedX;
+        p.y += p.speedY;
+    
+        // Wrap around screen
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+      });
+    
+      requestAnimationFrame(animate);
+    }
+    
+    window.addEventListener("resize", initCanvas);
+    initCanvas();
+    animate();
+    
   </script>
 </body>
 </html>

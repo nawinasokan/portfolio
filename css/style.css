@@ -2,50 +2,9 @@ body{
     background-color: black;
 }
 
+  /* Designation effects */  
+  /* part 1 style in use*/
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    }
-
-    .animate-float {
-    animation: float 6s ease-in-out infinite;
-    }
-
-    .animate-float-delay-1 {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: 1s;
-    }
-
-    .animate-float-delay-2 {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: 3s;
-    }
-
-    .animate-float-delay-3 {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: 5s;
-    }
-
-    html {
-        scroll-behavior: smooth;
-      }      
-
-    @keyframes gradient-x {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    }
-    .animate-gradient-x {
-    background-size: 200% 200%;
-    animation: gradient-x 6s ease infinite;
-    }
-
-    /* Designation effects */
-    
     @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 
     .dropping-texts {
@@ -74,96 +33,91 @@ body{
     .dropping-texts > div:nth-child(3) {
     animation: roll 5s linear infinite 2s;
     }
-   
+  
     @keyframes roll {
-    0% {
-        font-size:0px;
-        opacity:0;
-        margin-left:-30px;
-        margin-top:0px;
-        transform: rotate(-25deg);
-    }
-    3% {
-        opacity:1;
-        transform: rotate(0deg);
-    }
-    5% {
-        font-size:inherit;
-        opacity:1;
-        margin-left:0px;
-        margin-top:0px;
-    }
-    20% {
-        font-size:inherit;
-        opacity:1;
-        margin-left:0px;
-        margin-top:0px;
-        transform: rotate(0deg);
-    }
-    27% {
-        font-size:0px;
-        opacity:0.5;
-        margin-left:20px;
-        margin-top:100px;
-    }
-    100% {
-        font-size:0px;
-        opacity:0;
-        margin-left:-30px;
-        margin-top:0px;
-        transform: rotate(15deg);
-    }
-    }
-    @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
-    @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-    
-    body{
-        background-color: #000000;
-    }
-    .cards {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        -webkit-justify-content: center;
-        max-width: 100%;
-        margin-top: 2%;
-        gap: 20px;
-        margin-right: 16%;
-        
+      0% {
+          font-size:0px;
+          opacity:0;
+          margin-left:-30px;
+          margin-top:0px;
+          transform: rotate(-25deg);
+      }
+      3% {
+          opacity:1;
+          transform: rotate(0deg);
+      }
+      5% {
+          font-size:inherit;
+          opacity:1;
+          margin-left:0px;
+          margin-top:0px;
+      }
+      20% {
+          font-size:inherit;
+          opacity:1;
+          margin-left:0px;
+          margin-top:0px;
+          transform: rotate(0deg);
+      }
+      27% {
+          font-size:0px;
+          opacity:0.5;
+          margin-left:20px;
+          margin-top:100px;
+      }
+      100% {
+          font-size:0px;
+          opacity:0;
+          margin-left:-30px;
+          margin-top:0px;
+          transform: rotate(15deg);
+      }
     }
 
-    
-    .card__clock {
-        width: 15px;
-      vertical-align: middle;
-        fill: #AD7D52;
+    /* project card style */
+    /* part 2 style in use*/
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+    .cards {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      -webkit-justify-content: center;
+      max-width: 100%;
+      margin-top: 2%;
+      gap: 20px;
+      margin-right: 16%;
+      flex-wrap: wrap;
     }
-    .card__time {
-        font-size: 12px;
-        color: #AD7D52;
-        vertical-align: middle;
-        margin-left: 5px;
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .card {
+        width: 80% !important;
+        margin-right: 0 !important;
+      }
     }
     
-    .card__clock-info {
-        float: right;
-    }
-    
+   
     .card__img {
       visibility: hidden;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 235px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 235px;
       border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-      
+      border-top-right-radius: 12px;
     }
     
     .card__info-hover {
-        position: absolute;
-        padding: 16px;
+      position: absolute;
+      padding: 16px;
       width: 100%;
       opacity: 0;
       top: 0;
@@ -171,22 +125,21 @@ body{
     
     .card__img--hover {
       transition: 0.2s all ease-out;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
       position: absolute;
-        height: 235px;
+      height: 235px;
       border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    top: 0;
-      
+      border-top-right-radius: 12px;
+      top: 0;
     }
     .card {
       margin-right: 20px;
       transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
       background-color: #fff;
-        width: 22%;
+      width: 22%;
       position: relative;
       border-radius: 12px;
       overflow: hidden;
@@ -194,23 +147,23 @@ body{
     }
     .card:hover {
       box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-        transform: scale(1.08, 1.0);
+      transform: scale(1.08, 1.0);
     }
     
     .card__info {
     z-index: 2;
-      background-color: #fff;
-      border-bottom-left-radius: 12px;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-      padding: 16px 24px 24px 24px;
+    padding: 16px 24px 24px 24px;
     }
     
     .card__category {
-        font-family: 'Raleway', sans-serif;
-        text-transform: uppercase;
-        font-size: 13px;
-        letter-spacing: 2px;
-        font-weight: 500;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 500;
       color: #292929;
     }
     
@@ -250,4 +203,188 @@ body{
         position: relative;
         color:#fff;
     }
-  
+
+
+
+
+    /* Marquee for certifications card */
+    /* part 3 style in use*/
+    .cert-scroll-container {
+      overflow: hidden;
+      width: 100%;
+      background: linear-gradient(to right, #787ada, #0c6346);
+      padding: 1rem 0;
+      position: relative;
+    }
+    
+    .cert-marquee {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: scroll-left 25s linear infinite;
+    }
+    
+    .cert-card {
+      background-color: black;
+      color: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      min-width: 300px;
+      flex-shrink: 0;
+      font-family: sans-serif;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .cert-card:hover {
+      transform: scale(1.05);
+    }
+    
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .cert-card {
+        min-width: 250px;
+        font-size: 0.9rem;
+      }
+    
+      .cert-marquee {
+        animation: scroll-left 15s linear infinite;
+      }
+    }
+    
+
+    /* footer style contact icons*/
+    /* part 4 style in use*/
+
+      footer {
+        background-color: #121212;
+        color: #ffffff;
+        padding: 2rem 1rem;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      footer h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #00e6e6;
+      }
+      
+      footer .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+      
+      footer .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1f1f1f;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        transition: all 0.3s ease;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      
+      footer .social-icons a[href^="mailto"] {
+        border: 2px solid transparent;
+      }
+      footer .social-icons a[href^="mailto"]:hover {
+        background-color: white;
+        color: #d93025; /* Gmail red */
+      }
+      
+      footer .social-icons a[href^="tel"] {
+        border: 2px solid transparent;
+      }
+      footer .social-icons a[href^="tel"]:hover {
+        background-color: white;
+        color: #25D366; /* WhatsApp green */
+      }
+      
+      footer .social-icons a[href*="linkedin.com"] {
+        border: 2px solid transparent;
+      }
+      footer .social-icons a[href*="linkedin.com"]:hover {
+        background-color: #0077B5;
+        color: white;
+      }
+      
+      footer .social-icons a[href*="github.com"] {
+        border: 2px solid transparent;
+      }
+      footer .social-icons a[href*="github.com"]:hover {
+        background-color: white;
+        color: #171515;
+      }
+      
+      footer .social-icons a[href*="instagram.com"] {
+        border: 2px solid transparent;
+      }
+
+      footer .social-icons a[href*="instagram.com"]:hover {
+        background: #d6249f;
+        color: white;
+      }
+      
+      footer p {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #bbbbbb;
+      }
+
+      @media screen and (max-width: 600px) {
+        footer .social-icons {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.7rem;
+        }
+      
+        footer h2 {
+          font-size: 1.5rem;
+        }
+      
+        footer .social-icons a {
+          width: 40px;
+          height: 40px;
+        }
+      
+        footer p {
+          font-size: 0.8rem;
+        }
+      }
+
+    
+
+    /* style for code quote */
+    /* part 5 style in use*/
+
+      @media screen and (max-width: 768px) {
+        #code-quote p {
+          margin-left: 12% !important;
+        }
+        #code-quote{
+          margin-left: -7% !important;
+        }
+        .scalable-text {
+          display: block;
+          font-size: 1.7rem;
+          margin-top: 0.25rem;      
+        }
+      }
+
+      
+      
