@@ -1,3 +1,4 @@
+// experience time calculation
 const startDate = new Date("2024-08-12");
 const today = new Date();
 
@@ -8,7 +9,7 @@ let totalMonths =
 const years = Math.floor(totalMonths / 12);
 const months = totalMonths % 12;
 
-let durationText = "Work Experience : AUG 2024 - Present ";
+let durationText = "AUG 2024 - Present ";
 
 if (years > 0) {
 durationText += `( ${years} year${years > 1 ? "s" : ""}`;
