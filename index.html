@@ -1,38 +1,396 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowbite Navbar Test</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/index.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <style>
+        .card--1 .card__img, .card--1 .card__img--hover {
+            background-image: url('media/images/blackalaram.png');
+        }
+        
+        .card--2 .card__img, .card--2 .card__img--hover {
+            background-image: url('media/images/blackinvoice.jpg');
+        }
+
+        .card--3 .card__img, .card--3 .card__img--hover {
+            background-image: url('media/images/blackfile.png');
+        }
+
+    </style>
 </head>
 <body>
 
-<nav class="bg-gray-900 border-gray-200 dark:bg-gray-900 sticky top-0 z-50">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="media/images/nobglogo.png" class="h-8" alt="Logo" />
-    </a>
-    <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" aria-controls="navbar-user" aria-expanded="false">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-user">
-      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-gray-900 md:bg-gray-900 dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
-        <li><a href="#profile" class="block py-2 px-3 text-white hover:text-blue-400">About</a></li>
-        <li><a href="#qualifications" class="block py-2 px-3 text-white hover:text-blue-400">Qualifications</a></li>
-        <li><a href="#skill" class="block py-2 px-3 text-white hover:text-blue-400">Skills</a></li>
-        <li><a href="#projects" class="block py-2 px-3 text-white hover:text-blue-400">Projects</a></li>
-        <li><a href="#experience" class="block py-2 px-3 text-white hover:text-blue-400">Experiences</a></li>
-      </ul>
+    <nav class="sticky top-0 z-50 bg-gray-900 border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="media/images/nobglogo.png" class="h-8" alt="Flowbite Logo" />
+        </a>
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <img class="w-8 h-8 rounded-full" src="media/images/profile.jpg" alt="user photo">
+            </button>
+            <!-- Dropdown menu -->
+            <div class="z-50 hidden my-4 text-base list-none bg-gray-900 text-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                <div class="px-4 py-3">
+                    <span class="block text-sm text-gray-900 dark:text-white">Nawin Asokan</span>
+                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">Tamilnadu, India</span>
+                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"></span>
+                </div>
+                
+                </div>
+                <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+              <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-900 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900 dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                <a href="#profile" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" >About</a>
+                </li>
+                <li>
+                  <a href="#qualifications" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Qualifications</a>
+                </li> 
+                <a href="#skill" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skills</a>
+                </li>
+                <li>
+                  <a href="#projects" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
+                </li>
+                <li>
+                  <a href="#experience" class="nav-link block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Experiences</a>
+                </li>
+
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="w-full h-screen relative bg-cover bg-center bg-no-repeat" style="background-image: url('media/images/aboutme.png');" >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-l from-transparent via-black/60 to-black/90 flex flex-col justify-center px-6 sm:px-12 text-white z-10" >
+        <h2 class="text-3xl sm:text-4xl font-bold mb-2">Hello,</h2>
+        <h3 class="text-2xl sm:text-3xl font-semibold mb-1">I'm Nawin Asokan</h3>
+        <div class="dropping-texts text-lg sm:text-xl mb-6">
+          <div>Software Developer</div>
+          <div>Full Stack Developer</div>
+          <div>Python Developer</div>
+        </div> 
+      </div>
     </div>
-  </div>
-</nav>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <div id="profile">
+      <div class="bg-dark p-6 rounded-xl shadow-lg max-w-5xl mx-auto"> 
 
-</body>
+        <!-- About Heading Centered -->
+        <div class="w-full text-center mb-10">
+          <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">About Me</span>
+        </div>
+    
+        <!-- Flex Container for Image and Text -->
+        <div class="flex flex-col md:flex-row items-center justify-center">
+        
+          <div class="md:w-1/3 flex justify-center mb-6 md:mb-0 md:mr-6">
+            <div class="rounded-xl overflow-hidden shadow-lg w-48 h-48">
+              <img src="media/images/profile1.jpg" alt="About Me" class="w-full h-full object-cover" />
+              <!-- <video autoplay muted loop>
+                <source src="media/images/acheive.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              -->
+            </div>
+          </div>
+    
+          <div class="md:w-2/3 text-left" style="margin-left: 3%;margin-top: 10px;">
+            <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed text-justify">
+              I'm Nawin Asokan, a passionate and driven Python Software Developer with a focus on full stack web development. I specialize in building dynamic, scalable, and user-centric web applications using technologies such as Python, Django, FastAPI, HTML, CSS, JavaScript, and modern frameworks. My work spans both backend logic and frontend interfaces, allowing me to create seamless, end-to-end digital solutions. I have a strong foundation in database management using PostgreSQL, integration of RESTful APIs, and incorporating AI capabilities into applications. I'm continually exploring new tools and concepts in cloud computing, API integration, and responsive UI design to stay ahead in the ever-evolving tech landscape.I'm excited to contribute to impactful projects and tackle new challenges in the world of software development.
+            </p>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <div id="qualifications" >
+      <div class="w-full text-center z-10 mt-5">
+        <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 mb-10">
+          Qualifications
+        </span>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4 max-w-6xl mx-auto">
+          <div class="bg-gray-900 text-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+            <h3 class="text-xl font-bold text-gray-900 text-white mb-4">Graduation</h3>
+            <p class="text-white dark:text-gray-200 text-base mb-2">Bachelor of Engineering</p>
+            <p class="text-white dark:text-gray-200 text-base mb-2">
+              <span class="cursor-help" >Electronics and Communication Engineering</span>
+            </p>
+            <p class="text-white dark:text-gray-200 text-base mb-2">
+              <strong>Scored CGPA: </strong> 8.46
+            </p>
+            <p class="text-white dark:text-gray-200 text-base">
+              <a href="https://www.sonatech.ac.in" target="_blank" class="inline-flex items-center gap-1 text-sky-600 dark:text-sky-400 font-medium hover:underline hover:text-sky-700 dark:hover:text-sky-300 transition duration-200" >
+                  Sona College of Technology, Salem
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                  </svg>
+              </a>
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-gray-900 text-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+            <h3 class="text-xl font-bold text-gray-900 text-white mb-4">HSC</h3>
+            <p class="text-white dark:text-gray-200 text-base mb-2">Maths Computer Science</p>
+            <p class="text-white dark:text-gray-200 text-base mb-2">
+              <strong>Scored Percentage: </strong> 61.6%
+            </p>
+            <p class="text-white dark:text-gray-200 text-base">
+              The Gugai Higher Secondary School, Salem
+            </p>
+          </div>
+      
+          <!-- Card 3 -->
+          <div class="bg-gray-900 text-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+            <h3 class="text-xl font-bold text-gray-900 text-white mb-4">SSLC</h3>
+            <p class="text-white dark:text-gray-200 text-base mb-2">Maths Computer Science</p>
+            <p class="text-white dark:text-gray-200 text-base mb-2">
+              <strong>Scored Percentage: </strong> 71.4%
+            </p>
+            <p class="text-white dark:text-gray-200 text-base">
+              The Gugai Higher Secondary School, Salem
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+ 
+    <div id="code-quote">
+      <h1 style="margin-left: 12%;margin-top: 5%;" class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl" style="margin-top: 3%;">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Coding Ideas</span><br class="block md:hidden"> 
+        <span class="scalable-text">into Scalable Solutions.</span>
+      </h1>
+      <p style="margin-left: 8%;" class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+          As a Python Developer, I build full stack applications with clean architecture to solve real-world problems and drive innovation.
+      </p>
+          
+    </div>
+    
+    
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    
+    
+    <div id="skill">
+      <div class="w-full max-w-6xl mx-auto border overflow-hidden shadow-md h-[600px]">
+        <iframe src="/templates/skill.html" class="w-full h-full border-0" scrolling="no"></iframe>
+      </div>
+    </div>  
+
+
+    <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
+
+
+    <div  id="projects" style="margin-top: 3%;">
+      <div class="justify-center text-center" >
+        <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 mb-20 z-10">
+            Projects
+        </span>
+      </div>
+      <section class="cards">
+        <article class="card card--1" onmouseover="showDescription(1)" onmouseout="hideDescription()" >
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div class="card__img--hover"></div>
+          </a>
+          <div class="card__info">
+            <span class="card__category"> PROJECT 1</span>
+            <h3 class="card__title">Task Management and Time Tracking Web Application</h3>
+            <span class="card__by">Completed in <a class="card__author" title="author">2024</a></span>
+          </div>
+        </article>
+          
+          
+        <article class="card card--2" onmouseover="showDescription(2)" onmouseout="hideDescription()" >
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div class="card__img--hover"></div>
+          </a>
+          <div class="card__info">
+            <span class="card__category"> PROJECT 2</span>
+            <h3 class="card__title">Invoice Data Extraction System Using Gemini AI</h3>
+            <span class="card__by">Completed in <a class="card__author" title="author">2025</a></span>
+          </div>
+        </article>  
+
+        <article class="card card--3" onmouseover="showDescription(3)" onmouseout="hideDescription()" >
+          <div class="card__img"></div>
+          <a class="card_link">
+            <div class="card__img--hover"></div>
+          </a>
+          <div class="card__info">
+              <span class="card__category"> PROJECT 3</span>
+              <h3 class="card__title">Bulk File uploadation</h3>
+            <span class="card__by">Completed in <a class="card__author" title="author">2025</a></span>
+          </div>
+        </article>
+      </section>
+
+      <div style="margin-top: 2;margin-left: 13%;" id="card-description" class="relative mt-2 mx-auto max-w-6xl hidden group space-y-4 text-white transition-opacity duration-500 ease-in-out">
+        <h4 style="color: #6ee7b7;" class="text-2xl font-bold mb-2">Project Overview</h4>
+        <div class="space-y-3 text-base leading-relaxed">
+          <p id="desc-1" class="hidden">
+              <span style="color: #6ee7b7;">Description :</span> Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.
+          </p>
+          <p id="tech-1" style="color: #6ee7b7;" class="hidden text-sm font-medium">
+              Tech stack : Python, Django framework, SQLite, HTML, CSS, JavaScript, jQuery.
+          </p>
+          <p id="desc-2" class="hidden">
+              <span style="color: #6ee7b7;">Description :</span> Built a system that leverages Gemini AI to extract invoice data from PDF and image files with high accuracy using OCR and machine learning.
+          </p>
+          <p id="tech-2" style="color: #6ee7b7;" class="hidden text-sm font-medium">
+              Tech stack : Python, Gemini API, HTML, CSS, JavaScript, Django, PostgreSQL.
+          </p>
+          <p id="desc-3" class="hidden">
+              <span style="color: #6ee7b7;">Description :</span> Developed a fast bulk uploader for large datasets with format validation and metadata logging.
+          </p>
+          <p id="tech-3" style="color: #6ee7b7;" class="hidden text-sm font-medium">
+              Tech stack : Python, Django framework, HTML, CSS, PostgreSQL, JavaScript.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+
+
+    <div class="w-full max-w-6xl mx-auto mt-10 border rounded-lg overflow-hidden shadow-md h-[600px]">
+      <iframe src="templates/quote.html" class="w-full h-full border-0"></iframe>
+    </div>
+    <div id="certifications">
+      <div class="cert-scroll-container">
+        <div class="cert-marquee">
+          <!-- Original cards -->
+          <div class="cert-card">Certified in Cloud Computing from Livewire India.</div>
+          <div class="cert-card">Certified in Programming in PYTHON from Livewire India.</div>
+          <div class="cert-card" style="text-align: center;">Certifications</div>
+          <div class="cert-card">Certified in Programming in JAVA from NPTEL.</div>
+      
+          <!-- Duplicate cards for seamless loop -->
+          <div class="cert-card">Certified in Cloud Computing from Livewire India.</div>
+          <div class="cert-card">Certified in Programming in PYTHON from Livewire India.</div>
+          <div class="cert-card" style="text-align: center;">Certifications</div>
+          <div class="cert-card">Certified in Programming in JAVA from NPTEL.</div>
+        </div>
+      </div>
+    </div>
+    
+    
+   
+    <!-- <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"> -->
+
+    <div class="container" id="experience">
+      <div class="header">
+        <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 mb-20 z-10">
+          Experiences
+        </span> 
+        <p id="duration"></p>
+      </div>
+  
+      <div class="timeline">
+        <div class="timeline-line"></div>
+  
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-number">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-star-fill" viewBox="0 0 16 16">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <h2>Trainee - Software Development</h2>
+            <p>Contributed to multiple projects and gained hands-on experience.</p>
+            <p>Skills: Python, HTML, CSS, Django</p>
+            <p>AUG 2024 - FEB 2025</p>
+            <a href="https://mahimatech.com/" target="_blank">Mahima Tech</a>
+          </div>
+        </div>
+  
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-number">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-star-fill" viewBox="0 0 16 16">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <h2>Software Developer</h2>
+            <p>Working on scalable backend and frontend solutions.</p>
+            <p>Skills: Python, HTML, CSS, Django</p>
+            <p>FEB 2025 - PRESENT</p>
+            <a href="https://mahimatech.com/" target="_blank">Mahima Tech</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="contact">
+        <div class="social-icons">
+          <a href="mailto:nawinasokan16@gmail.com" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+            </svg>
+          </a>
+          
+          <a href="tel:+918300796919" title="Phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+            </svg>
+          </a>
+          
+          <a href="https://linkedin.com/in/nawin-a-dev" target="_blank" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+            </svg>
+          </a>
+          
+          <a href="https://github.com/nawinasokan" target="_blank" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+            </svg>
+          </a>
+          
+          <a href="https://www.instagram.com/_master_nawin_7" target="_blank" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg>
+          </a>
+
+
+          <a href="/media/pdf/Nawin_Resume.pdf" target="_blank" title="Click to view Resume">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+              <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+              <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+      <p>&copy; 2025 Nawin. All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>
