@@ -426,6 +426,8 @@ body{
         position: relative;
         padding-left: 30px;
         max-width: 50%;
+        margin-top: 3%;
+
       }
   
   
@@ -475,7 +477,7 @@ body{
       }
   
       .timeline-content a {
-        color: #4dd0e1;
+        color: #e79f64;
         text-decoration: none;
       }
   
@@ -494,5 +496,8 @@ body{
         .timeline-number {
           left: -30px;
         }
-  
+
+        .timeline {
+          max-width: 100%;
+        }
       }
