@@ -395,7 +395,8 @@ body{
         .scalable-text {
           display: block;
           font-size: 1.7rem;
-          margin-top: 0.25rem;      
+          margin-top: 0.25rem;  
+          color: white;    
         }
       }
 
