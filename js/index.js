@@ -3,8 +3,12 @@ const startDate = new Date("2024-08-12");
 const today = new Date();
 
 let totalMonths =
-(today.getFullYear() - startDate.getFullYear()) * 12 +
-(today.getMonth() - startDate.getMonth()) + 1; // +1 to include current month
+  (today.getFullYear() - startDate.getFullYear()) * 12 +
+  (today.getMonth() - startDate.getMonth());
+
+if (today.getDate() < startDate.getDate()) {
+  totalMonths -= 1;
+}
 
 const years = Math.floor(totalMonths / 12);
 const months = totalMonths % 12;
@@ -12,12 +16,13 @@ const months = totalMonths % 12;
 let durationText = "AUG 2024 - Present ";
 
 if (years > 0) {
-durationText += `( ${years} year${years > 1 ? "s" : ""}`;
-if (months > 0) {
-    durationText += ` ${months} month${months > 1 ? "s" : ""} )`;
-}
+  durationText += `( ${years} year${years !== 1 ? "s" : ""}`;
+  if (months > 0) {
+    durationText += ` ${months} month${months !== 1 ? "s" : ""}`;
+  }
+  durationText += " )";
 } else {
-durationText += `( ${months} month${months > 1 ? "s" : ""} )`;
+  durationText += `( ${months} month${months !== 1 ? "s" : ""} )`;
 }
 
 document.getElementById("duration").textContent = durationText;
